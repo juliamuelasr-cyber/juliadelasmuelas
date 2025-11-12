@@ -70,7 +70,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #1db954;
+  color: #8e44ad;
 }
 
 /* Secciones */
@@ -100,7 +100,7 @@ p {
   line-height: 1.6;
 }
 
-/* Proyectos estilo tarjetas */
+/* Proyectos cajas estilo */
 .project-container {
   display: flex;
   flex-wrap: wrap;

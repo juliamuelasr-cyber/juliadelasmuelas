@@ -208,6 +208,34 @@ p {
   font-size: 14px;
   color: #b3b3b3;
 }
+.proyecto-links {
+    list-style-type: none;      /* Quitamos viñetas por defecto */
+    padding-left: 0;            /* Quitamos padding del UL */
+}
+
+.proyecto-links li {
+    position: relative;
+    padding-left: 20px;         /* Espacio para el punto personalizado */
+    margin-bottom: 8px;         /* Espacio entre enlaces */
+}
+
+.proyecto-links li::before {
+    content: "·";               /* Punto antes del enlace */
+    position: absolute;
+    left: 0;
+    color: #8e44ad;             /* Color morado */
+    font-size: 18px;            /* Tamaño del punto */
+}
+
+.proyecto-links li a {
+    color: #8e44ad;             /* Color morado de enlace */
+    text-decoration: none;       /* Sin subrayado */
+    font-weight: bold;           /* Opcional */
+}
+
+.proyecto-links li a:hover {
+    text-decoration: underline;  /* Subrayado al pasar el mouse */
+}
 
 /* Tarjetas placeholders (en construcción) */
 .project-card.placeholder {

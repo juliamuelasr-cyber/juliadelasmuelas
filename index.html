@@ -9,12 +9,16 @@
 </head>
 <body>
 
-<!--Empieza el diseño--> 
+<!--Empieza el diseño + foto de perfil--> 
 <header>
-  <img src="Foto de perfil Julia.jpg" alt="Foto de perfil de Julia de las Muelas Ruiz">
-  <div class="nombre">
-    <span>Julia de las Muelas Ruiz</span>
+  <div class="profile-wrapper">
+    <!-- Imagen de perfil -->
+    <img id="profileImg" src="Foto de perfil Julia.jpg" alt="Foto de perfil de Julia de las Muelas Ruiz" tabindex="0">
+
+    <div class="nombre">
+      <span>Julia de las Muelas Ruiz</span>
       <p>Desarrollo de Aplicaciones & Análisis de Datos</p>
+    </div>
   </div>
 </header>
 
@@ -94,9 +98,54 @@
   
 </section>
 
+ <!--Uso de JavaScript para darle forma la foto de perfil-->
 
+<script>
+  (function() {
+    const img = document.getElementById('profileImg');
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const overlay = document.getElementById('modalOverlay');
 
-  
+    function openModal() {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      img.focus();
+    }
+
+    //La imagen se abre cuando le das click o enter
+    img.addEventListener('click', openModal);
+    img.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    //Cerrar con botón
+    modalClose.addEventListener('click', closeModal);
+
+    //Cerrar al clicar fuera
+    overlay.addEventListener('click', closeModal);
+
+    //Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    //La imagen será la misma que la miniatura
+    modalImg.src = img.src;
+  })();
+</script>
 
 </body>
 </html>

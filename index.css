@@ -23,6 +23,11 @@ header {
   padding: 40px 80px;
   gap: 30px;
 }
+.profile-wrapper {
+  display: flex;         
+  align-items: center;  
+  gap: 16px;       
+  }
 
 /* Imagen de perfil redonda */
 header img {
@@ -32,12 +37,6 @@ header img {
   object-fit: cover;
   border: 4px solid #191414;
 }
-
-.profile-wrapper {
-  display: flex;         
-  align-items: center;  
-  gap: 16px;       
-  }
 
 /* Miniatura */
 #profileImg {

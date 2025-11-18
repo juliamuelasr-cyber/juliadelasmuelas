@@ -36,7 +36,8 @@ header img {
 .profile-wrapper {
   display: flex;         
   align-items: center;  
-  gap: 16px;             
+  gap: 16px;       
+  }
 
 /* Miniatura */
 #profileImg {
